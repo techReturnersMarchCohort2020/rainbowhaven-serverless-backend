@@ -23,6 +23,7 @@ service: rainbowhaven-serverless-backend
 provider:
   name: aws
   runtime: nodejs12.x
+  
 
 # you can overwrite defaults here
 #  stage: dev
