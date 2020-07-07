@@ -83,7 +83,7 @@ app.post("/items", function (req, res) {
 app.post("/volunteer", function (req, res) {
   const query =
     "INSERT INTO volunteer (full_name,email,phone, address,postcode,password,zone,managerId) VALUES (?, ?, ?,?,?,?,?,?);";
-  const queryTask = "SELECT * FROM volunteer WHERE volunteer_id = ?";
+  const queryTask = "SELECT * FROM volunteer WHERE volunteer_Id = ?";
   connection.query(
     query,
     [
@@ -132,10 +132,10 @@ app.delete("/items/:client_id", function (req, res) {
   });
 });
 
-app.delete("/volunteer/:volunteer_id", function (req, res) {
-  const taskIdDeleted = "DELETE FROM volunteer WHERE volunteer_id=?";
+app.delete("/volunteer/:volunteer_Id", function (req, res) {
+  const taskIdDeleted = "DELETE FROM volunteer WHERE volunteer_Id=?";
   const taskDeleted = "SELECT * FROM volunteer;";
-  connection.query(taskIdDeleted, [req.params.volunteer_id], function (
+  connection.query(taskIdDeleted, [req.params.volunteer_Id], function (
     error,
     data
   ) {
