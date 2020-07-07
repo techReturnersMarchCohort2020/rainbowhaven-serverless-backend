@@ -137,6 +137,4 @@ app.put("/items/:client_id", function (req, res) {
 });
 
 
-
-
 module.exports.handler = serverless(app);
