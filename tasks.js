@@ -2,6 +2,7 @@ const express = require("express");
 const serverless = require("serverless-http");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -13,7 +14,6 @@ const connection = mysql.createConnection({
   user: process.env.dataBaseUser,
   password: process.env.dataBasePassword,
   database: "rainbowhaven"                      // The DS that I created in mysql
-
 })
 
 //////////////////////////////////////   Get    ////////////////////////////////////////////
@@ -135,6 +135,5 @@ app.put("/items/:client_id", function (req, res) {
       }
     })
 });
-
 
 module.exports.handler = serverless(app);
